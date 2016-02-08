@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kassiane.4all</groupId>
+	<artifactId>product-register-service</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>product-register-service</name>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+
+		<downloadSources>true</downloadSources>
+		<downloadJavadocs>true</downloadJavadocs>
+
+		<java.source.version>1.7</java.source.version>
+		<java.target.version>1.7</java.target.version>
+
+		<!-- Plugins -->
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+
+		<!-- Dependencies -->
+		<junit.version>4.12</junit.version>
+		<com.google.guava.version>18.0</com.google.guava.version>
+		<mysql.version>5.1.38</mysql.version>
+		<spring-framework.version>4.2.4.RELEASE</spring-framework.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- *** DATABASE MYSQL *** -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			 <!-- Spring and Transactions -->
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-context</artifactId>
+	            <version>${spring-framework.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.springframework</groupId>
+	            <artifactId>spring-tx</artifactId>
+	            <version>${spring-framework.version}</version>
+	        </dependency>
+	        
+			<!-- *** SPRING JDBC *** -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring-framework.version}</version>
+			</dependency>
+			
+			<!-- *** TEST *** -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${com.google.guava.version}</version>
+        	</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- *** DATABASE MYSQL *** -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- Spring and Transactions -->
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-tx</artifactId>
+	    </dependency>
+		
+		<!-- *** SPRING JDBC *** -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+
+		<!-- *** TEST *** -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>com.kassiane.4all.product.register.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.source.version}</source>
+					<target>${java.target.version}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
