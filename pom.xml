@@ -23,10 +23,6 @@
 		<java.source.version>1.7</java.source.version>
 		<java.target.version>1.7</java.target.version>
 
-		<!-- Plugins -->
-		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
-
 		<!-- Dependencies -->
 		<junit.version>4.12</junit.version>
 		<com.google.guava.version>18.0</com.google.guava.version>
