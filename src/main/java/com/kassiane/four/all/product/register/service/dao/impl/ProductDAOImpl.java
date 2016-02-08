@@ -1,4 +1,4 @@
-package com.kassiane.four.all.product.register.dao.impl;
+package com.kassiane.four.all.product.register.service.dao.impl;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,9 +18,9 @@ import javax.sql.rowset.serial.SerialBlob;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.kassiane.four.all.product.register.dao.ProductDAO;
-import com.kassiane.four.all.product.register.domain.Product;
-import com.kassiane.four.all.product.register.mapper.ProductMapper;
+import com.kassiane.four.all.product.register.service.dao.ProductDAO;
+import com.kassiane.four.all.product.register.service.domain.Product;
+import com.kassiane.four.all.product.register.service.mapper.ProductMapper;
 
 public class ProductDAOImpl implements ProductDAO{
 

@@ -1,4 +1,4 @@
-package com.kassiane.four.all.product.register.mapper;
+package com.kassiane.four.all.product.register.service.mapper;
 
 import java.sql.Blob;
 import java.sql.ResultSet;
@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.kassiane.four.all.product.register.domain.Product;
+import com.kassiane.four.all.product.register.service.domain.Product;
 
 public class ProductMapper implements RowMapper<Product> {
 

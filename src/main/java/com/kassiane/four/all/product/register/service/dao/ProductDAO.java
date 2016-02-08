@@ -1,4 +1,4 @@
-package com.kassiane.four.all.product.register.dao;
+package com.kassiane.four.all.product.register.service.dao;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.kassiane.four.all.product.register.domain.Product;
+import com.kassiane.four.all.product.register.service.domain.Product;
 
 public interface ProductDAO {
 	

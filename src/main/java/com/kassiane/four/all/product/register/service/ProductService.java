@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 import org.springframework.dao.DataAccessException;
 
-import com.kassiane.four.all.product.register.dao.ProductDAO;
-import com.kassiane.four.all.product.register.domain.Product;
+import com.kassiane.four.all.product.register.service.dao.ProductDAO;
+import com.kassiane.four.all.product.register.service.domain.Product;
 
 public class ProductService {
 

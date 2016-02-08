@@ -1,4 +1,4 @@
-package com.kassiane.four.all.product.register.domain;
+package com.kassiane.four.all.product.register.service.domain;
 
 import javax.swing.ImageIcon;
 
