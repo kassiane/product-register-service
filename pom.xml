@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.kassiane.4all</groupId>
+	<groupId>com.kassiane.four.all</groupId>
 	<artifactId>product-register-service</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
