@@ -3,77 +3,17 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.kassiane.four.all</groupId>
 	<artifactId>product-register-service</artifactId>
 	<version>1.0</version>
-	<packaging>jar</packaging>
-
+	
+	<parent>
+		<groupId>com.kassiane.four.all</groupId>
+		<artifactId>product-register</artifactId>
+		<version>1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	
 	<name>product-register-service</name>
-
-	<properties>
-
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
-
-		<downloadSources>true</downloadSources>
-		<downloadJavadocs>true</downloadJavadocs>
-
-		<java.source.version>1.7</java.source.version>
-		<java.target.version>1.7</java.target.version>
-
-		<!-- Dependencies -->
-		<junit.version>4.12</junit.version>
-		<com.google.guava.version>18.0</com.google.guava.version>
-		<mysql.version>5.1.38</mysql.version>
-		<spring-framework.version>4.2.4.RELEASE</spring-framework.version>
-
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<!-- *** DATABASE MYSQL *** -->
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>${mysql.version}</version>
-				<scope>runtime</scope>
-			</dependency>
-			 <!-- Spring and Transactions -->
-	        <dependency>
-	            <groupId>org.springframework</groupId>
-	            <artifactId>spring-context</artifactId>
-	            <version>${spring-framework.version}</version>
-	        </dependency>
-	        <dependency>
-	            <groupId>org.springframework</groupId>
-	            <artifactId>spring-tx</artifactId>
-	            <version>${spring-framework.version}</version>
-	        </dependency>
-	        
-			<!-- *** SPRING JDBC *** -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-jdbc</artifactId>
-				<version>${spring-framework.version}</version>
-			</dependency>
-			
-			<!-- *** TEST *** -->
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-
-			<dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${com.google.guava.version}</version>
-        	</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<dependencies>
 		<!-- *** DATABASE MYSQL *** -->

@@ -17,7 +17,9 @@ import java.util.List;
 import javax.sql.DataSource;
 import javax.sql.rowset.serial.SerialBlob;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -25,14 +27,14 @@ import com.kassiane.four.all.product.register.service.dao.ProductDAO;
 import com.kassiane.four.all.product.register.service.domain.Product;
 import com.kassiane.four.all.product.register.service.mapper.ProductMapper;
 
+@Component
 public class ProductDAOImpl implements ProductDAO {
 
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
+    private final JdbcTemplate jdbcTemplateObject;
 
-    public void setDataSource(final DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
+    @Autowired
+    public ProductDAOImpl(final DataSource dataSource) {
+        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
     }
 
     @Override
@@ -63,8 +65,8 @@ public class ProductDAOImpl implements ProductDAO {
         final float price = product.getPrice();
 
         final String query = "insert into Product (name, price, image) values (?, ?, ?)";
-        final PreparedStatement statement = this.dataSource.getConnection().prepareStatement(query,
-                Statement.RETURN_GENERATED_KEYS);
+        final PreparedStatement statement = this.jdbcTemplateObject.getDataSource().getConnection()
+                .prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
         statement.setString(1, name);
         statement.setBigDecimal(2, BigDecimal.valueOf(price));
